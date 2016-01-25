@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix(x)) {
                   inv<-solve(x)
 
 ##caching the inverted matrix
-                  c<<-x
+                  c<<-inv
 
 ## cacheSolve: computes the inverse of the special "matrix" returned  above. 
 ##If the inverse has already been calculated (and the matrix has not changed), 
