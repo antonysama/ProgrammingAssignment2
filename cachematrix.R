@@ -9,7 +9,8 @@ makeCacheMatrix <- function(x = matrix(x)) {
     get<-function () x #get the value of the vector
     setmatrix<-function(matrix) i<<-set #set the matrix to invert
     getmatrix ()<-function () i #get the inverted matrix 
-    list(set=set, get=get, #setting the getters & setters
+    #listing the getters & setters:
+    list(set=set, get=get, 
         setmatrix=setmatrix, 
         getmatrix=getmatrix) 
 ## cacheSolve: computes the inverse of the special "matrix" returned  above. 
@@ -18,12 +19,12 @@ makeCacheMatrix <- function(x = matrix(x)) {
                   
 cacheSolve <- function(x,...) {
 ## If the cache containts it, return a matrix that is the inverse of 'x'
-    i<-x$getmatrix() getting inverted matrix from cache
+    i<-x$getmatrix() getting inverted matrix from the cache
     if(!is.null (i)) { #if the cache isn't empty then...
         message("getting cached data")
         return(i)
         }
-## this is like an "else", if the cache is empty then compute the inverse
+## else, if the cache is empty then compute the inverse matrix
     get(x) #get matrix to be invereted    
     solve(x) #invert the matrix
 }
